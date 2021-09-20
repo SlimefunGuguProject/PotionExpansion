@@ -13,7 +13,7 @@ public class ResearchSetup {
                 .addItems(PotionItems.COAL_SIGHT, PotionItems.IRON_SIGHT, PotionItems.DIAMOND_SIGHT, PotionItems.GOLD_SIGHT, PotionItems.LAPIS_SIGHT, PotionItems.REDSTONE_SIGHT, PotionItems.EMERALD_SIGHT, PotionItems.QUARTZ_SIGHT, PotionItems.ANCIENT_DEBRIS_SIGHT, PotionItems.COPPER_SIGHT)
                 .register();
 
-        new Research(new NamespacedKey(plugin, "powders"), 31002, "粉末!", 6)
+        new Research(new NamespacedKey(plugin, "powders"), 31002, "粉末", 6)
                 .addItems(PotionItems.COAL_POWDER, PotionItems.IRON_POWDER, PotionItems.DIAMOND_POWDER, PotionItems.GOLD_POWDER, PotionItems.LAPIS_POWDER, PotionItems.REDSTONE_POWDER, PotionItems.EMERALD_POWDER, PotionItems.QUARTZ_POWDER, PotionItems.ANCIENT_DEBRIS_POWDER, PotionItems.COPPER_POWDER)
                 .register();
 
@@ -21,6 +21,6 @@ public class ResearchSetup {
                 .addItems(PotionItems.ALCHEMIC_STATION)
                 .register();
 
-        plugin.getLogger().info("PE加载成功!");
+        plugin.getLogger().info("PotionExpansion加载成功!");
     }
 }
