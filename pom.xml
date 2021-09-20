@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.epicplayera10</groupId>
     <artifactId>PotionExpansion</artifactId>
-    <version>4 zh-CN</version>
+    <version>5 zh-CN</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

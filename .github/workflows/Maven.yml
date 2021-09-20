@@ -34,6 +34,6 @@ jobs:
         if: success()
         with:
           name: PotionExpansion zh-CN
-          path: target/PotionExpansion v4 zh-CN.jar
+          path: target/PotionExpansion v5 zh-CN.jar
 # 注意要和打包出来的一致
 # 注意要和打包出来的一致
