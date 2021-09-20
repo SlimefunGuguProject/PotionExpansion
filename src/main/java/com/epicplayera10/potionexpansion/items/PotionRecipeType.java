@@ -4,8 +4,7 @@ import com.epicplayera10.potionexpansion.PotionExpansion;
 import com.epicplayera10.potionexpansion.multiblocks.alchemic.AlchemicRecipe;
 import com.epicplayera10.potionexpansion.multiblocks.alchemic.AlchemicStation;
 
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import org.bukkit.NamespacedKey;
 
 import java.util.Arrays;

@@ -7,9 +7,8 @@ import com.epicplayera10.potionexpansion.api.effects.PotionSightType;
 import com.epicplayera10.potionexpansion.api.effects.EffectsManager;
 import com.epicplayera10.potionexpansion.utils.XRayUtil;
 
+import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
-
-import me.mrCookieSlime.Slimefun.cscorelib2.chat.ChatColors;
 
 import net.md_5.bungee.api.ChatMessageType;
 import net.md_5.bungee.api.chat.TextComponent;

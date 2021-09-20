@@ -7,11 +7,10 @@ import com.epicplayera10.potionexpansion.items.PotionSightItem;
 import com.epicplayera10.potionexpansion.multiblocks.alchemic.AlchemicStation;
 
 import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
 import io.github.thebusybiscuit.slimefun4.implementation.items.blocks.UnplaceableBlock;
-
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -70,14 +69,16 @@ public class PotionsItemSetup {
                 PotionSightType.QUARTZ_SIGHT
         ).register(plugin);
 
-        if (SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16)) {
+        MinecraftVersion minecraftVersion = Slimefun.getMinecraftVersion();
+
+        if (minecraftVersion.isAtLeast(MinecraftVersion.MINECRAFT_1_16)) {
             new PotionSightItem(PotionItems.potionCategory, PotionItems.ANCIENT_DEBRIS_SIGHT, PotionRecipeType.ALCHEMIC_STATION_RECIPE,
                     new ItemStack[]{null, PotionItems.ANCIENT_DEBRIS_POWDER, null, null, null, null, null, PotionItems.mundanePotion, null},
                     PotionSightType.ANCIENT_DEBRIS_SIGHT
             ).register(plugin);
         }
 
-        if (SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_17)) {
+        if (minecraftVersion.isAtLeast(MinecraftVersion.MINECRAFT_1_17)) {
             new PotionSightItem(PotionItems.potionCategory, PotionItems.COPPER_SIGHT, PotionRecipeType.ALCHEMIC_STATION_RECIPE,
                     new ItemStack[]{null, PotionItems.COPPER_POWDER, null, null, null, null, null, PotionItems.mundanePotion, null},
                     PotionSightType.COPPER_SIGHT
@@ -118,13 +119,15 @@ public class PotionsItemSetup {
                 new ItemStack[]{new ItemStack(Material.NETHER_QUARTZ_ORE), null, null, null, null, null, null, null, null}
         ).register(plugin);
 
-        if (SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16)) {
+        MinecraftVersion minecraftVersion = Slimefun.getMinecraftVersion();
+
+        if (minecraftVersion.isAtLeast(MinecraftVersion.MINECRAFT_1_16)) {
             new UnplaceableBlock(PotionItems.potionCategory, PotionItems.ANCIENT_DEBRIS_POWDER, RecipeType.GRIND_STONE,
                     new ItemStack[]{new ItemStack(Material.ANCIENT_DEBRIS), null, null, null, null, null, null, null, null}
             ).register(plugin);
         }
 
-        if (SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_17)) {
+        if (minecraftVersion.isAtLeast(MinecraftVersion.MINECRAFT_1_17)) {
             new SlimefunItem(PotionItems.potionCategory, PotionItems.COPPER_POWDER, RecipeType.GRIND_STONE,
                     new ItemStack[]{new ItemStack(Material.COPPER_ORE), null, null, null, null, null, null, null, null}
             ).register(plugin);

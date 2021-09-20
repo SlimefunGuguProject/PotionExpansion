@@ -4,11 +4,10 @@ import com.epicplayera10.potionexpansion.PotionExpansion;
 import com.epicplayera10.potionexpansion.api.effects.PotionSightType;
 import com.epicplayera10.potionexpansion.utils.ItemUtil;
 
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.cscorelib2.chat.ChatColors;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -22,15 +21,15 @@ import org.bukkit.potion.PotionType;
 public class PotionItems {
 
     //Normal Items
-    public static final ItemStack mundanePotion = new CustomItem(Material.POTION, (itemMeta -> {
+    public static final ItemStack mundanePotion = new CustomItemStack(Material.POTION, (itemMeta -> {
         PotionMeta meta = (PotionMeta) itemMeta;
         meta.setBasePotionData(new PotionData(PotionType.MUNDANE));
     }));
 
     //Categories
-    public static final Category potionCategory = new Category(new NamespacedKey(PotionExpansion.getInstance(),
+    public static final ItemGroup potionCategory = new ItemGroup(new NamespacedKey(PotionExpansion.getInstance(),
             "potionexpansion"),
-            new CustomItem(Material.POTION, itemMeta -> {
+            new CustomItemStack(Material.POTION, itemMeta -> {
                 PotionMeta meta = (PotionMeta) itemMeta;
                 meta.setColor(Color.AQUA);
                 meta.setDisplayName(ChatColors.color("&bPotion Expansion(药剂科技)"));

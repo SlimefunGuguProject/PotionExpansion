@@ -2,14 +2,13 @@ package com.epicplayera10.potionexpansion.multiblocks.alchemic;
 
 import com.epicplayera10.potionexpansion.PotionExpansion;
 
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.core.multiblocks.MultiBlockMachine;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.implementation.Slimefun;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.ItemUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.paperlib.PaperLib;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
-
-import me.mrCookieSlime.Slimefun.Objects.Category;
-import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
-import me.mrCookieSlime.Slimefun.cscorelib2.inventory.ItemUtils;
 
 import org.bukkit.Effect;
 import org.bukkit.Material;
@@ -39,8 +38,8 @@ public class AlchemicStation extends MultiBlockMachine {
     private final int POTION_3_SLOT = 8;
 
     @ParametersAreNonnullByDefault
-    public AlchemicStation(Category category, SlimefunItemStack item) {
-        super(category, item, new ItemStack[]{null, new ItemStack(Material.WHITE_STAINED_GLASS), null,
+    public AlchemicStation(ItemGroup itemGroup, SlimefunItemStack item) {
+        super(itemGroup, item, new ItemStack[]{null, new ItemStack(Material.WHITE_STAINED_GLASS), null,
                 new ItemStack(Material.WHITE_STAINED_GLASS), new ItemStack(Material.GLOWSTONE), new ItemStack(Material.WHITE_STAINED_GLASS),
                 new ItemStack(Material.CAULDRON), new ItemStack(Material.DISPENSER), new ItemStack(Material.CAULDRON)}, BlockFace.SELF);
     }
@@ -64,7 +63,7 @@ public class AlchemicStation extends MultiBlockMachine {
                     startAnimation(recipe, inv, block, glassBlocks);
                 }
             } else {
-                SlimefunPlugin.getLocalization().sendMessage(player, "machines.pattern-not-found", true);
+                Slimefun.getLocalization().sendMessage(player, "machines.pattern-not-found", true);
             }
         }
     }

@@ -5,6 +5,8 @@ import com.epicplayera10.potionexpansion.commands.PotionExpansionTab;
 import com.epicplayera10.potionexpansion.listeners.DrinkMilkListener;
 import com.epicplayera10.potionexpansion.tasks.EffectsTask;
 
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
 import org.apache.commons.lang.Validate;
 
 import org.bukkit.Bukkit;
@@ -13,10 +15,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-
-import me.mrCookieSlime.Slimefun.cscorelib2.config.Config;
-import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
-import me.mrCookieSlime.Slimefun.cscorelib2.updater.Updater;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -32,7 +30,7 @@ public class PotionExpansion extends JavaPlugin implements SlimefunAddon {
         Config cfg = new Config(this);
 
         if (cfg.getBoolean("auto-update")) {
-            Updater updater = new GitHubBuildsUpdater(this, this.getFile(), "EpicPlayerA10/PotionExpansion/master");
+            GitHubBuildsUpdater updater = new GitHubBuildsUpdater(this, this.getFile(), "EpicPlayerA10/PotionExpansion/master");
             updater.start();
         }
 

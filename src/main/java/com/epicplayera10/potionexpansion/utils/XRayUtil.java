@@ -1,6 +1,6 @@
 package com.epicplayera10.potionexpansion.utils;
 
-import me.mrCookieSlime.Slimefun.cscorelib2.blocks.Vein;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.Vein;
 
 import org.apache.commons.lang.Validate;
 
