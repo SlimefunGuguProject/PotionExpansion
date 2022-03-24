@@ -1,0 +1,9 @@
+version: "1"
+rules:
+  - base: master
+    upstream: EpicPlayerA10:master
+    mergeMethod: merge
+    assignees:
+      - baoad
+    conflictReviewers:
+      - baoad

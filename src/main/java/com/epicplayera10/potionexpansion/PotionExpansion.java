@@ -57,7 +57,7 @@ public class PotionExpansion extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/EpicPlayerA10/PotionExpansion/issues";
+        return "https://github.com/SlimefunGuguProject/PotionExpansion/issues";
     }
 
     @Nonnull

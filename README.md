@@ -1,32 +1,35 @@
-# PotionExpansion
-This is an addon for slimefun that adds new potions with legal xray!<br>
-The idea of this addon is from [Potions Master](https://www.curseforge.com/minecraft/mc-mods/potionsmaster) mod.
+# PotionExpansion 药剂科技
 
-## Potions
-- CoalSight
-- IronSight
-- DiamondSight
-- GoldSight
-- LapisSight
-- RedstoneSight
-- EmeraldSight
-- QuartzSight
-- AncientDebrisSight
-- CopperSight
+这个附属能让你通过粘液科技合法拥有X-ray!
 
-## Download
-You can download this addon from here:<br>
+该附属灵感来源于 [Potions Master](https://www.curseforge.com/minecraft/mc-mods/potionsmaster) 模组。
 
-<p align="center">
-  <a href="https://thebusybiscuit.github.io/builds/EpicPlayerA10/PotionExpansion/master"><img src="https://thebusybiscuit.github.io/builds/EpicPlayerA10/PotionExpansion/master/badge.svg" alt="Build Status"/></a>
-</p>
+## 可用药水
 
-## Tutorials:
+- 煤炭药水
+- 铁药水
+- 钻石药水
+- 金药水
+- 青金石药水
+- 红石药水
+- 绿宝石药水
+- 石英药水
+- 远古残骸药水
+- 铜药水
+
+## 下载
+
+[![构建状态](https://builds.guizhanss.net/f/baoad/PotionExpansion/master/badge.svg)](https://builds.guizhanss.net/baoad/PotionExpansion/master)
+
+## 教程视频
+
 - https://www.youtube.com/watch?v=GDrJ5mX4njk
 
-## Commands
-Main command is `/pe`
-- `/pe showEffects` - Shows custom effects in chat (Custom effects are automatically shown on actionbar by default)
+## 指令
 
-## Configuration
+指令为 `/pe`
+- `/pe showEffects` - 可以在聊天中展示当前激活的药水效果 (药水效果默认会在状态栏 action bar 中显示)
+
+## 配置文件
+
 Click [here](https://github.com/EpicPlayerA10/PotionExpansion/wiki).
