@@ -21,6 +21,9 @@ You can download this addon from here:<br>
   <a href="https://thebusybiscuit.github.io/builds/EpicPlayerA10/PotionExpansion/master"><img src="https://thebusybiscuit.github.io/builds/EpicPlayerA10/PotionExpansion/master/badge.svg" alt="Build Status"/></a>
 </p>
 
+## Tutorials:
+- https://www.youtube.com/watch?v=GDrJ5mX4njk
+
 ## Commands
 Main command is `/pe`
 - `/pe showEffects` - Shows custom effects in chat (Custom effects are automatically shown on actionbar by default)
