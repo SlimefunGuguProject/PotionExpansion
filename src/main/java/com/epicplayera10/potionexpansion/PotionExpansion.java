@@ -6,7 +6,7 @@ import com.epicplayera10.potionexpansion.listeners.DrinkMilkListener;
 import com.epicplayera10.potionexpansion.tasks.EffectsTask;
 
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.apache.commons.lang.Validate;
 
 import org.bukkit.Bukkit;
@@ -18,6 +18,7 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.logging.Level;
 
 public class PotionExpansion extends JavaPlugin implements SlimefunAddon {
     private static PotionExpansion instance;
@@ -27,11 +28,17 @@ public class PotionExpansion extends JavaPlugin implements SlimefunAddon {
     public void onEnable() {
         instance = this;
 
+        if (!getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
+            getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
+            getLogger().log(Level.SEVERE, "从此处下载: https://50l.cc/gzlib");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+
         Config cfg = new Config(this);
 
-        if (cfg.getBoolean("auto-update")) {
-            GitHubBuildsUpdater updater = new GitHubBuildsUpdater(this, this.getFile(), "EpicPlayerA10/PotionExpansion/master");
-            updater.start();
+        if (cfg.getBoolean("auto-update") && getDescription().getVersion().startsWith("Build")) {
+            GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "PotionExpansion", "master");
         }
 
         Settings.load(cfg);

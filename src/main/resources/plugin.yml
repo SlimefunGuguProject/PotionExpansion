@@ -24,6 +24,9 @@ api-version: 1.14
 depend:
 - Slimefun
 
+softdepend:
+- GuizhanLibPlugin
+
 commands:
   potionexpansion:
     description: Main command of this addon.
