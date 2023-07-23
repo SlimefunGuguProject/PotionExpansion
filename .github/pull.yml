@@ -4,6 +4,6 @@ rules:
     upstream: EpicPlayerA10:master
     mergeMethod: merge
     assignees:
-      - baoad
+      - ybw0014
     conflictReviewers:
-      - baoad
+      - ybw0014
