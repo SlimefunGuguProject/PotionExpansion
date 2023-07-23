@@ -47,7 +47,7 @@ public class EffectsTask extends BukkitRunnable {
                 effects.removeIf(effect -> effect.getTime() <= 0);
 
                 if (effects.size() == 0) {
-                    EffectsManager.removePlayer(player.getUniqueId());
+                    EffectsManager.removePlayerEffects(player.getUniqueId());
                 }
             }
         }

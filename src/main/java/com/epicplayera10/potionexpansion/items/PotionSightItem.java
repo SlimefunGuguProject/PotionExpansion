@@ -14,7 +14,7 @@ import io.github.thebusybiscuit.slimefun4.core.handlers.ItemConsumptionHandler;
 import org.bukkit.inventory.ItemStack;
 
 public class PotionSightItem extends SlimefunItem {
-    private PotionSightType potionSightType;
+    private final PotionSightType potionSightType;
 
     public PotionSightItem(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe, PotionSightType potionSightType) {
         super(itemGroup, item, recipeType, recipe);

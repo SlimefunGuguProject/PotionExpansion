@@ -7,7 +7,6 @@ import com.epicplayera10.potionexpansion.tasks.EffectsTask;
 
 import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
 import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
-import org.apache.commons.lang.Validate;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -55,7 +54,6 @@ public class PotionExpansion extends JavaPlugin implements SlimefunAddon {
         getCommand("pe").setExecutor(new PotionExpansionCommand());
 
         getCommand("potionexpansion").setTabCompleter(new PotionExpansionTab());
-        getCommand("pe").setTabCompleter(new PotionExpansionTab());
     }
 
     @Override
@@ -82,8 +80,7 @@ public class PotionExpansion extends JavaPlugin implements SlimefunAddon {
     }
 
     public static @Nullable BukkitTask runSync(@Nonnull Runnable runnable, long delay) {
-        Validate.notNull(runnable, "无法生效");
-        Validate.isTrue(delay >= 0, "延迟不能为负");
+        assert delay >= 0;
 
         if (instance == null || !instance.isEnabled()) {
             return null;

@@ -20,7 +20,7 @@ public class DrinkMilkListener implements Listener {
 
         if (e.getItem().getType() == Material.MILK_BUCKET) {
             if (EffectsManager.hasAnyEffect(player)) {
-                EffectsManager.removePlayer(player.getUniqueId());
+                EffectsManager.removePlayerEffects(player.getUniqueId());
             }
         }
     }

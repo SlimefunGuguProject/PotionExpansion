@@ -3,6 +3,9 @@ package com.epicplayera10.potionexpansion.api.effects;
 import org.bukkit.Color;
 import org.bukkit.Material;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
 public enum PotionSightType {
     COAL_SIGHT(Color.BLACK, Material.COAL_ORE, Material.getMaterial("DEEPSLATE_COAL_ORE")),
     IRON_SIGHT(Color.SILVER, Material.IRON_ORE, Material.getMaterial("DEEPSLATE_IRON_ORE")),
@@ -15,10 +18,10 @@ public enum PotionSightType {
     ANCIENT_DEBRIS_SIGHT(Color.fromRGB(42, 0, 0), Material.getMaterial("ANCIENT_DEBRIS")),
     COPPER_SIGHT(Color.ORANGE, Material.getMaterial("COPPER_ORE"), Material.getMaterial("DEEPSLATE_COPPER_ORE"));
 
-    private Material[] ores;
-    private Color color;
+    private final Material[] ores;
+    private final Color color;
 
-    PotionSightType(Color color, Material... ores) {
+    PotionSightType(@Nonnull Color color, @Nullable Material... ores) {
         this.color = color;
         this.ores = ores;
     }

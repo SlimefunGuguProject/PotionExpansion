@@ -79,11 +79,10 @@ public class AlchemicStation extends MultiBlockMachine {
         if (ingredient != null) {
             for (AlchemicRecipe recipe : recipes) {
                 if (SlimefunUtils.isItemSimilar(ingredient, recipe.getIngredient(), true)) {
-                    if (anyValidPotionSlot(recipe, input)) {
+                    if (anyValidInputPotion(recipe, input)) {
                         return recipe;
                     }
                 }
-
             }
         }
         return null;
@@ -115,15 +114,14 @@ public class AlchemicStation extends MultiBlockMachine {
         for (int i = 0; i < 10; i++) {
             int j = i;
             PotionExpansion.runSync(() -> {
+                World world = b.getWorld();
                 if (j < 9) {
-                    World world = b.getWorld();
                     world.playSound(b.getLocation(), Sound.BLOCK_BREWING_STAND_BREW, 1f, 2f);
                     glassBlocks.forEach(glassBlock -> {
                         world.playEffect(glassBlock.getLocation().clone().add(0.5, 0, 0.5), Effect.SMOKE, BlockFace.UP);
                     });
                 } else {
-                    World world = b.getWorld();
-                    if (anyValidPotionSlot(recipe, dispInv)) {
+                    if (anyValidInputPotion(recipe, dispInv)) {
                         world.playSound(b.getLocation(), Sound.BLOCK_BREWING_STAND_BREW, 1f, 0.1f);
                         brew(recipe, dispInv);
                     } else {
@@ -138,26 +136,26 @@ public class AlchemicStation extends MultiBlockMachine {
     @ParametersAreNonnullByDefault
     private void brew(AlchemicRecipe recipe, Inventory dispInv) {
         for (int i = POTION_1_SLOT; i < POTION_3_SLOT + 1; i++) {
-            if (checkPotionSlot(recipe, dispInv.getItem(i))) {
+            if (isInputPotionValid(recipe, dispInv.getItem(i))) {
                 dispInv.setItem(i, recipe.getOutput());
             }
         }
     }
 
     @ParametersAreNonnullByDefault
-    private boolean anyValidPotionSlot(AlchemicRecipe recipe, Inventory dispInv) {
+    private boolean anyValidInputPotion(AlchemicRecipe recipe, Inventory dispInv) {
         for (int i = POTION_1_SLOT; i < POTION_3_SLOT + 1; i++) {
-            if (checkPotionSlot(recipe, dispInv.getItem(i))) {
+            if (isInputPotionValid(recipe, dispInv.getItem(i))) {
                 return true;
             }
         }
         return false;
     }
 
-    private boolean checkPotionSlot(@Nonnull AlchemicRecipe recipe, @Nullable ItemStack item) {
+    private boolean isInputPotionValid(@Nonnull AlchemicRecipe recipe, @Nullable ItemStack item) {
         if (item != null && item.getType() == Material.POTION && item.hasItemMeta()) {
             PotionMeta meta = (PotionMeta) item.getItemMeta();
-            return meta.getBasePotionData().getType() == recipe.getPotion();
+            return meta.getBasePotionData().getType() == recipe.getInputPotion();
         }
         return false;
     }

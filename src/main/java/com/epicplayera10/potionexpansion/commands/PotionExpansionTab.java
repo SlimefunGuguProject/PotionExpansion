@@ -21,10 +21,9 @@ public class PotionExpansionTab implements TabCompleter {
         subcommands.add("showEffects");
     }
 
-    @Nullable
     @Override
     @ParametersAreNonnullByDefault
-    public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+    public @Nullable List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (args.length == 1) {
             if (args[0].length() == 0) {
                 return subcommands;

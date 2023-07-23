@@ -12,13 +12,13 @@ import java.util.List;
 public class AlchemicRecipe {
 
     private final ItemStack ingredient;
-    private final PotionType potion;
+    private final PotionType inputPotion;
     private final ItemStack output;
 
     @ParametersAreNonnullByDefault
     public AlchemicRecipe(List<ItemStack> input, ItemStack output) {
         this.ingredient = input.get(1);
-        this.potion = getPotionType(input.get(7));
+        this.inputPotion = getPotionType(input.get(7)); // 7 is a slot where is a potion
         this.output = output;
     }
 
@@ -34,8 +34,8 @@ public class AlchemicRecipe {
         return ingredient;
     }
 
-    public PotionType getPotion() {
-        return potion;
+    public PotionType getInputPotion() {
+        return inputPotion;
     }
 
     public ItemStack getOutput() {

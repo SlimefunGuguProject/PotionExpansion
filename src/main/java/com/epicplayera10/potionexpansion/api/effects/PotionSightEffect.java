@@ -3,7 +3,7 @@ package com.epicplayera10.potionexpansion.api.effects;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 public class PotionSightEffect {
-    private PotionSightType type;
+    private final PotionSightType type;
     private long time;
 
     @ParametersAreNonnullByDefault

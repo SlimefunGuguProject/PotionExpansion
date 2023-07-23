@@ -27,12 +27,7 @@ public class EffectsManager {
 
     @ParametersAreNonnullByDefault
     public static boolean hasEffect(Player player, PotionSightType type) {
-        for (PotionSightEffect potionSightEffect : getPlayerEffects(player)) {
-            if (potionSightEffect.getType() == type) {
-                return true;
-            }
-        }
-        return false;
+        return getPlayerEffects(player).stream().anyMatch(effect -> effect.getType() == type);
     }
 
     @ParametersAreNonnullByDefault
@@ -41,7 +36,7 @@ public class EffectsManager {
     }
 
     @ParametersAreNonnullByDefault
-    public static void removePlayer(UUID uuid) {
+    public static void removePlayerEffects(UUID uuid) {
         playersEffects.remove(uuid);
     }
 }
