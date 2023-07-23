@@ -34,7 +34,7 @@ public class PotionsItemSetup {
         powdersSetup(plugin);
         potionsSetup(plugin);
 
-        plugin.getLogger().info("PE加载成功!");
+        plugin.getLogger().info("已加载药剂科技物品！");
     }
 
     private static void potionsSetup(@Nonnull PotionExpansion plugin) {

@@ -16,7 +16,7 @@ public class PotionExpansionCommand implements CommandExecutor {
     @ParametersAreNonnullByDefault
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColors.color("&c你不是玩家!"));
+            sender.sendMessage(ChatColors.color("&c只能由玩家执行该指令！"));
             return false;
         }
 
@@ -27,7 +27,7 @@ public class PotionExpansionCommand implements CommandExecutor {
                 if (EffectsManager.hasAnyEffect(player)) {
                     PotionExpansion.getInstance().getEffectsTask().showEffects(player, false);
                 } else {
-                    player.sendMessage(ChatColors.color("&c你不能获得任何效果"));
+                    player.sendMessage(ChatColors.color("&c你没有任何效果！"));
                 }
             }
 

@@ -43,6 +43,6 @@ public class ResearchSetup {
                 .addItems(PotionItems.ALCHEMIC_STATION, PotionItems.PESTLE)
                 .register();
 
-        plugin.getLogger().info("药剂科技载成功!");
+        plugin.getLogger().info("已加载药剂科技研究！");
     }
 }

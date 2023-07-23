@@ -34,7 +34,7 @@ public class PotionItems {
             new CustomItemStack(Material.POTION, itemMeta -> {
                 PotionMeta meta = (PotionMeta) itemMeta;
                 meta.setColor(Color.AQUA);
-                meta.setDisplayName(ChatColors.color("&bPotion Expansion(药剂科技)"));
+                meta.setDisplayName(ChatColors.color("&b药剂科技"));
                 meta.addEnchant(Enchantment.LURE, 1, true);
                 meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
             })
@@ -44,17 +44,18 @@ public class PotionItems {
     public static final SlimefunItemStack ALCHEMIC_STATION = new SlimefunItemStack("ALCHEMIC_STATION",
             Material.BREWING_STAND,
             "&6炼药台",
-            "&a&o此物品和酿造台一样的操作,但他能制作特殊的药剂",
-            "&a&o喝下药水后,会感应到附近相对应的矿石"
+            "&a&o此物品是一个特殊的酿造台，",
+            "&a&o但他能制作特殊的药剂。",
+            "&a&o喝下药水后，会感应到附近相对应的矿石。"
     );
 
     public static final SlimefunItemStack PESTLE = new SlimefunItemStack("PESTLE",
             Material.FLINT,
-            "&f&lPestle",
+            "&f&l杵",
             meta -> {
                 meta.setLore(Arrays.asList(
-                        ChatColors.color("&a&oYou can crush ores by using it"),
-                        ChatColors.color("&c&lIt is disposable")
+                        ChatColors.color("&a&o使用该物品捣碎矿石"),
+                        ChatColors.color("&c&l可重复使用")
                 ));
                 meta.addEnchant(Enchantment.DURABILITY, 1, true);
                 meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
