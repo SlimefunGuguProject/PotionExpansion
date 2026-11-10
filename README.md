@@ -19,7 +19,7 @@
 
 ## 下载
 
-[![构建状态](https://builds.guizhanss.net/f/baoad/PotionExpansion/master/badge.svg)](https://builds.guizhanss.net/baoad/PotionExpansion/master)
+[下载 PotionExpansion](https://resources.guizhanss.com/plugin/PotionExpansion)
 
 ## 教程视频
 
